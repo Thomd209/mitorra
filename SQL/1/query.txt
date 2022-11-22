@@ -1,0 +1,5 @@
+Получить значения свойств товара, если известно его ID:
+
+Пусть product_id = 1
+
+SELECT value from property_value WHERE product_id = 1

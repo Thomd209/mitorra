@@ -1,0 +1,10 @@
+.first-menu-item > .sub-menu {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.first-menu-item:hover > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+}
