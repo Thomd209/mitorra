@@ -10,26 +10,4 @@
 3. Внутри тела цикла на каждой его итерации будет происходить следующее: Массив с данными будет вставляться в базу данных с помощью интерфейса, использующегося для подключения к базе данных (например, PDO)
 
 4. Последним шагом алгоритма будет закрытие файла c помощью функции fclose($resource), которой в аргументы передается ресурс.
-
-
-<?php
-
-$user = 'admin';
-$pass = '12345';
-
-$pdo = new PDO('mysql:host=localhost;dbname=test', $user, $pass);
-
-$handle = fopen('shop.csv', 'r');
-for ($i = 0; $row = fgetcsv($handle); $i++) {
-
-    $name = $row['name'];
-    $amount = $row['amount'];
-    $price = $row['price']
-
-    $sql = "INSERT INTO product (name, amount, price) VALUES (?,?,?)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$name, $amount, $price]);
-}
-
-fclose($handle);
 	
